@@ -37,4 +37,16 @@ hide_streamlit_style = '''
 '''
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
+
+openai.api_key = "sk-p999HAfj6Cm1bO00SXgJc7kFxvFPtQ1KBBWrqSOU"
+
+headers = {
+    'authorization': assembly_auth_key, 
+    'content-type': 'application/json',
+}
+
+upload_endpoint = 'https://api.assemblyai.com/v2/upload'
+transcription_endpoint = "https://api.assemblyai.com/v2/transcript"
+
 
