@@ -95,7 +95,7 @@ def call_gpt3(prompt):
 
 def main():
 
-    st.title("Talking to GPT-3")
+    st.title("Using voice control")
             
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
@@ -105,6 +105,9 @@ def main():
             
     file_path = "input.wav"
 
+# This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
+
+"""
     #record_audio(file_path)
 
     upload_url = upload_to_assemblyai(file_path)
@@ -122,6 +125,8 @@ def main():
 
     st.write('Response Received from GPT-3')
     st.success(gpt_output)
+    
+    """
 
 
 
