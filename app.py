@@ -41,24 +41,6 @@ headers = {
 upload_endpoint = 'https://api.assemblyai.com/v2/upload'
 transcription_endpoint = "https://api.assemblyai.com/v2/transcript"
 
-# STREAMLIT AUDIO RECORDER Instance
-val = st_audiorec()
-# web component returns arraybuffer from WAV-blob
-st.write('Audio data received in the Python backend will appear below this message ...')
-
-if isinstance(val, dict):  # retrieve audio data
-    with st.spinner('retrieving audio-recording...'):
-        ind, val = zip(*val['arr'].items())
-        ind = np.array(ind, dtype=int)  # convert to np array
-        val = np.array(val)             # convert to np array
-        sorted_ints = val[ind]
-        stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
-        wav_bytes = stream.read()
-
-        # wav_bytes contains audio data in format to be further processed
-        # display audio data as received on the Python side
-    st.audio(wav_bytes, format='audio/wav')
-
 def upload_to_assemblyai(file_path):
 
     def read_audio(file_path):
@@ -110,12 +92,19 @@ def call_gpt3(prompt):
                                         prompt = prompt, max_tokens = 50)
     return response["choices"][0]["text"]
 
+
 def main():
 
     st.title("Talking to GPT-3")
     file_path = "input.wav"
+            
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
+    st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
-    record_audio(file_path)
+    st_audiorec(file_path)
+
+    #record_audio(file_path)
 
     upload_url = upload_to_assemblyai(file_path)
     st.write('Prompt uploaded to AssemblyAI')
