@@ -3,20 +3,12 @@ import time
 import requests
 import pandas as pd
 import numpy as np
-#import nltk
-#nltk.download()
-import matplotlib.pyplot as plt
-#from nltk.corpus import stopwords
 import re
 import string
 import os
 import openai
 import json
-import streamlit as st
 import streamlit.components.v1 as components
-import requests
-import numpy as np 
-
 from io import BytesIO
 from time import sleep
 
@@ -48,6 +40,20 @@ headers = {
 
 upload_endpoint = 'https://api.assemblyai.com/v2/upload'
 transcription_endpoint = "https://api.assemblyai.com/v2/transcript"
+
+# DESIGN implement changes to the standard streamlit UI/UX
+st.set_page_config(page_title="streamlit_audio_recorder")
+# Design move app further up and remove top padding
+st.markdown('''<style>.css-1egvi7u {margin-top: -3rem;}</style>''',
+    unsafe_allow_html=True)
+# Design change st.Audio to fixed height of 45 pixels
+st.markdown('''<style>.stAudio {height: 45px;}</style>''',
+    unsafe_allow_html=True)
+# Design change hyperlink href link color
+st.markdown('''<style>.css-v37k9u a {color: #ff4c4b;}</style>''',
+    unsafe_allow_html=True)  # darkmode
+st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
+    unsafe_allow_html=True)  # lightmode
 
 def upload_to_assemblyai(file_path):
 
