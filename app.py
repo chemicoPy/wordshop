@@ -102,7 +102,7 @@ def main():
     build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
     st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
-    st_audiorec(file_path)
+    st_audiorec(parent_dir)
 
     #record_audio(file_path)
 
