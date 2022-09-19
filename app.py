@@ -3,10 +3,10 @@ import time
 import requests
 import pandas as pd
 import numpy as np
-import nltk
+#import nltk
 #nltk.download()
 import matplotlib.pyplot as plt
-from nltk.corpus import stopwords
+#from nltk.corpus import stopwords
 import re
 import string
 import os
@@ -122,3 +122,9 @@ def main():
 
     st.write('Response Received from GPT-3')
     st.success(gpt_output)
+
+
+
+
+if __name__ == '__main__':
+    main()
