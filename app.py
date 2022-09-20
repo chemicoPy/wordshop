@@ -44,7 +44,7 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-st.title('Wordshop')
+st.title('wordshop')
 
 assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
 
