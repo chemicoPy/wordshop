@@ -100,6 +100,8 @@ def main():
    st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
    audio_data = st_audiorec()
+   return ("Hello!")
+   return audio_data
             
    file_path = "input.wav"
 
