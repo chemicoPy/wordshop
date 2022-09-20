@@ -12,6 +12,8 @@ import streamlit.components.v1 as components
 from io import BytesIO
 from time import sleep
 
+# Desiging & implementing changes to the standard streamlit UI/UX
+st.set_page_config(page_title="rephraise", page_icon="img/rephraise_logo.png",)
 # Design move app further up and remove top padding
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
@@ -29,6 +31,7 @@ st.markdown('''<style>.stSpinner > div > div {border-top-color: #9d03fc;}</style
 # Design change min height of text input box
 st.markdown('''<style>.css-15tx938{min-height: 0.0rem;}</style>''',
     unsafe_allow_html=True)
+
 # Design hide top header line
 hide_decoration_bar_style = '''<style>header {visibility: hidden;}</style>'''
 st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
