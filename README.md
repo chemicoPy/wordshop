@@ -6,6 +6,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/chemicopy/wordshop)
 
 # Project Overview
-wordshop
+wordshop is 
 
 ## [Use App](https://chemicopy-wordshop-app-gti2n8.streamlitapp.com/)
