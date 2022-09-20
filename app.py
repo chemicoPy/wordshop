@@ -12,9 +12,6 @@ import streamlit.components.v1 as components
 from io import BytesIO
 from time import sleep
 
-# disable warnings
-st.set_option('deprecation.showPyplotGlobalUse', False)
-st.set_option('deprecation.showfileUploaderEncoding', False)
 # Design move app further up and remove top padding
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
@@ -40,14 +37,12 @@ hide_streamlit_footer = """<style>#MainMenu {visibility: hidden;}
                         footer {visibility: hidden;}</style>"""
 st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
+# disable warnings
+st.set_option('deprecation.showPyplotGlobalUse', False)
+st.set_option('deprecation.showfileUploaderEncoding', False)
+
 st.title('Wordshop')
 
-hide_streamlit_style = '''
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-'''
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
