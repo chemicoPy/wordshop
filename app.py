@@ -162,9 +162,6 @@ def main():
     st.write('Response Received from GPT-3')
     st.success(gpt_output)
     
-    """
-
-
 
 
 if __name__ == '__main__':
