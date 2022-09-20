@@ -125,7 +125,7 @@ def main():
    st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
    #st_audiorec()
-   val = st_audiorec()
+   st_audiorec()
 
    st.button('Generate content NOW!')
     
@@ -144,7 +144,7 @@ def main():
 
 # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-   record_audio(file_path)
+   st_audiorec(file_path)
 
    upload_url = upload_to_assemblyai(file_path)
    st.write('Prompt uploaded to AssemblyAI')
