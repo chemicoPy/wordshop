@@ -143,6 +143,8 @@ def main():
         # display audio data as received on the Python side
        st.audio(wav_bytes, format='audio/wav')
 
+   st.button('Generate content NOW!')
+    
    st.subheader('\nOR Enter text below\n')
             
    st.write("\n")  # add spacing
@@ -150,8 +152,9 @@ def main():
    inp = st.text_area(
         "Write your text here!", example, max_chars=2000, height=150
     )
-   if st.button('Generate content NOW!'):
-       st.spinner()
+    
+   st.button('Generate content NOW!')
+
             
    #file_path = "input.wav"
 
