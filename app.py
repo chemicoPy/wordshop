@@ -12,9 +12,9 @@ import streamlit.components.v1 as components
 from io import BytesIO
 from time import sleep
 
+
 # Desiging & implementing changes to the standard streamlit UI/UX
-st.set_page_config(page_title="rephraise", page_icon="img/rephraise_logo.png",)
-# Design move app further up and remove top padding
+
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
@@ -45,8 +45,6 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 st.title('Wordshop')
-
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
 
