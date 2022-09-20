@@ -157,10 +157,10 @@ def main():
     #st.write('Prompt Transcribed...Sending to GPT-3')
     #st.info(prompt)
 
-    gpt_output = call_gpt3(prompt)
+    #gpt_output = call_gpt3(prompt)
 
-    st.write('Response Received from GPT-3')
-    st.success(gpt_output)
+    #st.write('Response Received from GPT-3')
+    #st.success(gpt_output)
     
 
 
