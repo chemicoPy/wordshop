@@ -15,11 +15,32 @@ from time import sleep
 # disable warnings
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
+# Design move app further up and remove top padding
+st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
+    unsafe_allow_html=True)
+# Design change hyperlink href link color
+st.markdown('''<style>.css-znku1x a {color: #9d03fc;}</style>''',
+    unsafe_allow_html=True)  # darkmode
+st.markdown('''<style>.css-znku1x a {color: #9d03fc;}</style>''',
+    unsafe_allow_html=True)  # lightmode
+# Design change height of text input fields headers
+st.markdown('''<style>.css-qrbaxs {min-height: 0.0rem;}</style>''',
+    unsafe_allow_html=True)
+# Design change spinner color to primary color
+st.markdown('''<style>.stSpinner > div > div {border-top-color: #9d03fc;}</style>''',
+    unsafe_allow_html=True)
+# Design change min height of text input box
+st.markdown('''<style>.css-15tx938{min-height: 0.0rem;}</style>''',
+    unsafe_allow_html=True)
+# Design hide top header line
+hide_decoration_bar_style = '''<style>header {visibility: hidden;}</style>'''
+st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
+# Design hide "made with streamlit" footer menu area
+hide_streamlit_footer = """<style>#MainMenu {visibility: hidden;}
+                        footer {visibility: hidden;}</style>"""
+st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
-st.title('Language Workshop')
-st.subheader("Navigate to side bar to see project info")
-st.subheader("See below for options")
-
+st.title('Wordshop')
 
 hide_streamlit_style = '''
             <style>
@@ -93,7 +114,14 @@ def call_gpt3(prompt):
     return response["choices"][0]["text"]
 
 
-def main():
+def main():    
+   
+   #st.image('img/image_banner.png')  # Logo
+   st.markdown('Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
+        '[Victor Ogunjobi](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/) - '
+        'view project source code on '
+        '[GitHub](https://github.com/chemicoPy/language-workshop)')
+   st.write('\n')  # add spacing
             
    parent_dir = os.path.dirname(os.path.abspath(__file__))
    build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
@@ -101,8 +129,6 @@ def main():
 
    #st_audiorec()
    val = st_audiorec()
-    # web component returns arraybuffer from WAV-blob
-   st.write('Audio data received in the Python backend will appear below this message ...')
 
    if isinstance(val, dict):  # retrieve audio data
        with st.spinner('retrieving audio-recording...'):
@@ -117,7 +143,17 @@ def main():
         # display audio data as received on the Python side
        st.audio(wav_bytes, format='audio/wav')
 
-   file_path = "input.wav"
+   st.subheader('\nOR Enter text below\n')
+            
+   st.write("\n")  # add spacing
+
+   inp = st.text_area(
+        "Write your text here!", example, max_chars=2000, height=150
+    )
+   if st.button('Generate content NOW!'):
+       st.spinner()
+            
+   #file_path = "input.wav"
 
 # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
