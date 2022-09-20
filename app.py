@@ -127,7 +127,8 @@ def main():
    #st_audiorec()
    val = st_audiorec()
 
-   st.write('Get current working directory : ', os.getcwd())
+   st.write(parent_dir)
+   st.write(build_dir)
 
    st.button('Generate content NOW!')
     
