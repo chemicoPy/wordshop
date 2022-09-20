@@ -127,6 +127,8 @@ def main():
    #st_audiorec()
    val = st_audiorec()
 
+   st.write('Get current working directory : ', os.getcwd())
+
    st.button('Generate content NOW!')
     
    st.subheader('\nOR Enter text below\n')
