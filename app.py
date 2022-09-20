@@ -69,6 +69,7 @@ def upload_to_assemblyai(file_path):
                     break
                 yield data
 
+                
     upload_response =  requests.post(upload_endpoint, 
                                      headers=headers, 
                                      data=read_audio(file_path))
