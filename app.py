@@ -150,7 +150,7 @@ def main():
    st.write("\n")  # add spacing
 
    inp = st.text_area(
-        "Write your text here!", example, max_chars=2000, height=150
+        "Write your text here!", max_chars=2000, height=150
     )
     
    st.button('Generate content NOW!')
