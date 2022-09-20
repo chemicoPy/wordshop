@@ -127,9 +127,6 @@ def main():
    #st_audiorec()
    val = st_audiorec()
 
-   st.write(parent_dir)
-   st.write(build_dir)
-
    st.button('Generate content NOW!')
     
    st.subheader('\nOR Enter text below\n')
@@ -147,23 +144,23 @@ def main():
 
 # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-    record_audio(file_path)
+   record_audio(file_path)
 
-    upload_url = upload_to_assemblyai(file_path)
-    st.write('Prompt uploaded to AssemblyAI')
+   upload_url = upload_to_assemblyai(file_path)
+   st.write('Prompt uploaded to AssemblyAI')
 
-    transcription_id = transcribe(upload_url)
-    st.write('Prompt Sent for Transciption to AssemblyAI')
+   transcription_id = transcribe(upload_url)
+   st.write('Prompt Sent for Transciption to AssemblyAI')
 
-    prompt = get_transcription_result(transcription_id)
+   prompt = get_transcription_result(transcription_id)
 
-    st.write('Prompt Transcribed...Sending to GPT-3')
-    st.info(prompt)
+   st.write('Prompt Transcribed...Sending to GPT-3')
+   st.info(prompt)
 
-    gpt_output = call_gpt3(prompt)
+   gpt_output = call_gpt3(prompt)
 
-    st.write('Response Received from GPT-3')
-    st.success(gpt_output)
+   st.write('Response Received from GPT-3')
+   st.success(gpt_output)
     
 
 if __name__ == '__main__':
