@@ -97,22 +97,22 @@ def main():
 
    val = st_audiorec()
     # web component returns arraybuffer from WAV-blob
-    st.write('Audio data received in the Python backend will appear below this message ...')
+   st.write('Audio data received in the Python backend will appear below this message ...')
 
-    if isinstance(val, dict):  # retrieve audio data
-        with st.spinner('retrieving audio-recording...'):
-            ind, val = zip(*val['arr'].items())
-            ind = np.array(ind, dtype=int)  # convert to np array
-            val = np.array(val)             # convert to np array
-            sorted_ints = val[ind]
-            stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
-            wav_bytes = stream.read()
+   if isinstance(val, dict):  # retrieve audio data
+       with st.spinner('retrieving audio-recording...'):
+           ind, val = zip(*val['arr'].items())
+           ind = np.array(ind, dtype=int)  # convert to np array
+           val = np.array(val)             # convert to np array
+           sorted_ints = val[ind]
+           stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
+           wav_bytes = stream.read()
 
         # wav_bytes contains audio data in format to be further processed
         # display audio data as received on the Python side
-        st.audio(wav_bytes, format='audio/wav')
+       st.audio(wav_bytes, format='audio/wav')
             
-    file_path = "input.wav"
+   file_path = "input.wav"
 
 # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
