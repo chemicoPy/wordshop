@@ -117,7 +117,7 @@ def main():
    st.markdown('Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
         '[Victor Ogunjobi](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/) - '
         'view project source code on '
-        '[GitHub](https://github.com/chemicoPy/language-workshop)')
+        '[GitHub](https://github.com/chemicoPy/wordshop)')
    st.write('\n')  # add spacing
             
    parent_dir = os.path.dirname(os.path.abspath(__file__))
