@@ -127,19 +127,6 @@ def main():
    #st_audiorec()
    val = st_audiorec()
 
-   if isinstance(val, dict):  # retrieve audio data
-       with st.spinner('retrieving audio-recording...'):
-           ind, val = zip(*val['arr'].items())
-           ind = np.array(ind, dtype=int)  # convert to np array
-           val = np.array(val)             # convert to np array
-           sorted_ints = val[ind]
-           stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
-           wav_bytes = stream.read()
-
-        # wav_bytes contains audio data in format to be further processed
-        # display audio data as received on the Python side
-       st.audio(wav_bytes, format='audio/wav')
-
    st.button('Generate content NOW!')
     
    st.subheader('\nOR Enter text below\n')
@@ -150,26 +137,25 @@ def main():
         "Write your text here!", max_chars=2000, height=150
     )
     
-   #st.button('Generate content NOW!')
+   button2 = st.button('Generate content NOW!')
 
             
    #file_path = "input.wav"
 
 # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-"""
     #record_audio(file_path)
 
-    upload_url = upload_to_assemblyai(file_path)
-    st.write('Prompt uploaded to AssemblyAI')
+    #upload_url = upload_to_assemblyai(file_path)
+    #st.write('Prompt uploaded to AssemblyAI')
 
-    transcription_id = transcribe(upload_url)
-    st.write('Prompt Sent for Transciption to AssemblyAI')
+    #transcription_id = transcribe(upload_url)
+    #st.write('Prompt Sent for Transciption to AssemblyAI')
 
-    prompt = get_transcription_result(transcription_id)
+    #prompt = get_transcription_result(transcription_id)
 
-    st.write('Prompt Transcribed...Sending to GPT-3')
-    st.info(prompt)
+    #st.write('Prompt Transcribed...Sending to GPT-3')
+    #st.info(prompt)
 
     gpt_output = call_gpt3(prompt)
 
