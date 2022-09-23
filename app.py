@@ -14,7 +14,7 @@ from time import sleep
 
 
 # Desiging & implementing changes to the standard streamlit UI/UX
-st.set_page_config(page_title="wordshop", page_icon="img/icon.png")
+st.set_page_config(page_icon="img/icon.png")
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
