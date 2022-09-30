@@ -125,13 +125,15 @@ def main():
 
    #st_audiorec()
    st_audiorec()
-
-   buttons = st.columns((1, 2)
    
    fields = ["Using voice: Generate content NOW!", "Using text: Generate content NOW!"]
                         
-   for col, field_name in zip(buttons, fields):
-       col.write(field_name)
+   col1, col2 = st.columns([1,1])
+    
+   with col1:
+       st.button('1')
+   with col2:
+       st.button('2')
     
    #st.button('Generate content NOW!')
     
