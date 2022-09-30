@@ -126,9 +126,7 @@ def main():
    #st_audiorec()
    st_audiorec()
 
-   colms = st.columns((1, 2))
-    
-   #st.button('Generate content NOW!')
+   st.button('Generate content NOW!')
     
    st.subheader('\nOR Enter text below\n')
             
