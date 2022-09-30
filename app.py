@@ -14,7 +14,7 @@ from time import sleep
 
 
 # Desiging & implementing changes to the standard streamlit UI/UX
-st.set_page_config(page_icon="img/icon_2.jpg")
+st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
@@ -112,7 +112,7 @@ def call_gpt3(prompt):
 
 def main():    
    
-   st.image('img/icon.png')  # Logo
+   st.image('img/icon.png')  # Banner in the app
    st.markdown('Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
         '[Victor Ogunjobi](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/) - '
         'view project source code on '
@@ -126,7 +126,13 @@ def main():
    #st_audiorec()
    st_audiorec()
 
-   st.button('Generate content NOW!')
+   buttons = st.columns((1, 2, 2, 1, 1)
+   
+   fields = ["Using voice: Generate content NOW!", "Using text: Generate content NOW!"]
+   for col, field_name in zip(buttons, fields):
+    col.write(field_name)
+    
+   #st.button('Generate content NOW!')
     
    st.subheader('\nOR Enter text below\n')
             
