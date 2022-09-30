@@ -126,7 +126,7 @@ def main():
    #st_audiorec()
    st_audiorec()
 
-   st.button('Generate content NOW!')
+   st.button('Using voice: Generate content NOW!')
     
    st.subheader('\nOR Enter text below\n')
             
