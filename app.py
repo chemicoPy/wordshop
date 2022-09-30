@@ -136,7 +136,7 @@ def main():
         "Write your text here!", max_chars=2000, height=150
     )
    
-   #st.button('Generate content NOW!')
+   st.button('Using text: Generate content NOW!')
 
             
    file_path = "input.wav"
