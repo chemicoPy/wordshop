@@ -125,13 +125,8 @@ def main():
 
    #st_audiorec()
    st_audiorec()
-   
-   col1, col2 = st.columns([1,2])
-    
-   with col1:
-       st.button('Using voice: Generate content NOW!')
-   with col2:
-       st.button('Using text: Generate content NOW!')
+
+   colms = st.columns((1, 2))
     
    #st.button('Generate content NOW!')
     
@@ -142,7 +137,7 @@ def main():
    inp = st.text_area(
         "Write your text here!", max_chars=2000, height=150
     )
-    
+   
    #st.button('Generate content NOW!')
 
             
