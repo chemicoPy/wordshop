@@ -139,7 +139,28 @@ def main():
     ## NOTE:
     If the Job/your preferences could not be matched with the available jobs, the overview of job data will be returned with their scores all labeled as "0.0" 
     """)
-   
+    st.sidebar.markdown(
+
+    """
+
+    -----------
+
+    # Let's connect
+
+    
+
+    [![Victor Ogunjobi](https://img.shields.io/badge/Author-@VictorOgunjobi-gray.svg?colorA=gray&colorB=dodgergreen&logo=github)](https://www.github.com/chemicopy)
+
+    
+
+    [![Victor Ogunjobi](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logoColor=white)](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/)
+
+    
+
+    [![Victor Ogunjobi](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=gray)](https://twitter.com/chemicopy_)
+
+    """)
+       
     st.image('img/icon.png')  # Banner in the app
     st.subheader("Using voice option to generate content")
     st.markdown('Summary: Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
@@ -157,7 +178,7 @@ def main():
 
     st.button('Using voice: Generate content NOW!')
     
-    st.subheader('\n("OR using text option to generate content")\n')
+    st.subheader('\nOR using text option to generate content\n')
             
     st.write("\n")  # add spacing
     
