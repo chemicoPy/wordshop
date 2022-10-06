@@ -188,7 +188,7 @@ A:""",
    response = None
 
    with st.form(key="inputs"):
-       submit_button = st.form_submit_button(label="Generate!")
+       submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
 
        if submit_button:
 
@@ -218,7 +218,7 @@ A:""",
 
     
     
-   st.button('Using text: Generate content NOW!')
+   #st.button('Using text: Generate content NOW!')
 
             
    file_path = "input.wav"
