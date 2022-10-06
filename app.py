@@ -169,15 +169,15 @@ A:""",
    except ValueError:
        rec = 0
 
-    with st.beta_expander("Generation options..."):
-        length = st.slider(
+   with st.beta_expander("Generation options..."):
+       length = st.slider(
             "Choose the length of the generated texts (in tokens)",
             2,
             1024,
             512 if rec < 2 else 50,
             10,
         )
-        temp = st.slider(
+       temp = st.slider(
             "Choose the temperature (higher - more random, lower - more repetitive). For the code generation or sentence classification promps it's recommended to use a lower value, like 0.35",
             0.0,
             1.5,
