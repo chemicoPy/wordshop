@@ -188,33 +188,33 @@ A:""",
    response = None
 
    with st.form(key="inputs"):
-        submit_button = st.form_submit_button(label="Generate!")
+       submit_button = st.form_submit_button(label="Generate!")
 
-        if submit_button:
+       if submit_button:
 
-            payload = {
+           payload = {
                 "context": inp,
                 "token_max_length": length,
                 "temperature": temp,
                 "top_p": 0.9,
             }
 
-            query = requests.post("http://localhost:5000/generate", params=payload)
-            response = query.json()
+           query = requests.post("http://localhost:5000/generate", params=payload)
+           response = query.json()
 
-            st.markdown(response["prompt"] + response["text"])
-            st.text(f"Generation done in {response['compute_time']:.3} s.")
+           st.markdown(response["prompt"] + response["text"])
+           st.text(f"Generation done in {response['compute_time']:.3} s.")
 
-    if False:
-        col1, col2, *rest = st.beta_columns([1, 1, 10, 10])
+   if False:
+       col1, col2, *rest = st.beta_columns([1, 1, 10, 10])
 
-        def on_click_good():
-            response["rate"] = "good"
-            print(response)
+       def on_click_good():
+           response["rate"] = "good"
+           print(response)
 
-        def on_click_bad():
-            response["rate"] = "bad"
-            print(response)
+       def on_click_bad():
+           response["rate"] = "bad"
+           print(response)
 
     
     
