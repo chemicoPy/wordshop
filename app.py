@@ -15,33 +15,6 @@ from time import sleep
 
 # Desiging & implementing changes to the standard streamlit UI/UX
 st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
-st.subheader("Navigate to side bar to see full project info")
-st.sidebar.markdown(
-            """
-     ----------
-    ## Project Overview
-    This is a Job recommendation web app that uses filtering techniques and Natural Language Processing (NLP)
-    to suggest 10 top jobs to user upon entering a specific job/role (and probably other preferences).
-    """)
-
-st.sidebar.header("")  # initialize empty space
-
-st.sidebar.markdown(
-    """
-    ----------
-    ## Text data conversion method is "TF-IDF"
-    Term Frequency - Inverse Document Frequency (TF-IDF) converts text data to vectors as model can only process numerical data; it weights the word counts by measure of how often they appear in the dataset
-    """)
-
-st.sidebar.header("")  # initialize empty space
-
-st.sidebar.markdown(
-            
-"""
-    ----------
-    ## NOTE:
-    If the Job/your preferences could not be matched with the available jobs, the overview of job data will be returned with their scores all labeled as "0.0" 
-    """)
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
@@ -137,9 +110,38 @@ def call_gpt3(prompt):
     return response["choices"][0]["text"]
 
 
-def main():    
+def main():
+   
+    st.subheader("Navigate to side bar to see full project info")
+    st.sidebar.markdown(
+            """
+     ----------
+    ## Project Overview
+    This is a Job recommendation web app that uses filtering techniques and Natural Language Processing (NLP)
+    to suggest 10 top jobs to user upon entering a specific job/role (and probably other preferences).
+    """)
+
+    st.sidebar.header("")  # initialize empty space
+
+    st.sidebar.markdown(
+    """
+    ----------
+    ## Text data conversion method is "TF-IDF"
+    Term Frequency - Inverse Document Frequency (TF-IDF) converts text data to vectors as model can only process numerical data; it weights the word counts by measure of how often they appear in the dataset
+    """)
+
+    st.sidebar.header("")  # initialize empty space
+
+    st.sidebar.markdown(
+            
+"""
+    ----------
+    ## NOTE:
+    If the Job/your preferences could not be matched with the available jobs, the overview of job data will be returned with their scores all labeled as "0.0" 
+    """)
    
    st.image('img/icon.png')  # Banner in the app
+   st.subheader("Using voice option to generate content")
    st.markdown('Summary: Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
         '[Victor Ogunjobi](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/) - '
         'view project source code on '
@@ -155,7 +157,7 @@ def main():
 
    st.button('Using voice: Generate content NOW!')
     
-   st.subheader('\nOR Enter text below\n')
+   st.subheader('\n("OR using text option to generate content")\n')
             
    st.write("\n")  # add spacing
 
