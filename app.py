@@ -164,9 +164,10 @@ A:""",
     )
     
    try:
-        rec = ex_names.index(inp)
-    except ValueError:
-        rec = 0
+       rec = ex_names.index(inp)
+   
+   except ValueError:
+       rec = 0
 
     with st.beta_expander("Generation options..."):
         length = st.slider(
