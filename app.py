@@ -111,7 +111,7 @@ def call_gpt3(prompt):
 
 
 def main():
-   
+    
     st.subheader("Navigate to side bar to see full project info")
     st.sidebar.markdown(
             """
@@ -140,28 +140,28 @@ def main():
     If the Job/your preferences could not be matched with the available jobs, the overview of job data will be returned with their scores all labeled as "0.0" 
     """)
    
-   st.image('img/icon.png')  # Banner in the app
-   st.subheader("Using voice option to generate content")
-   st.markdown('Summary: Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
+    st.image('img/icon.png')  # Banner in the app
+    st.subheader("Using voice option to generate content")
+    st.markdown('Summary: Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
         '[Victor Ogunjobi](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/) - '
         'view project source code on '
         '[GitHub](https://github.com/chemicoPy/wordshop)')
-   st.write('\n')  # add spacing
+    st.write('\n')  # add spacing
             
-   parent_dir = os.path.dirname(os.path.abspath(__file__))
-   build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
-   st_audiorec = components.declare_component("st_audiorec", path=build_dir)
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
+    st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
-   #st_audiorec()
-   st_audiorec()
+    #st_audiorec()
+    st_audiorec()
 
-   st.button('Using voice: Generate content NOW!')
+    st.button('Using voice: Generate content NOW!')
     
-   st.subheader('\n("OR using text option to generate content")\n')
+    st.subheader('\n("OR using text option to generate content")\n')
             
-   st.write("\n")  # add spacing
-
-   ex_names = [
+    st.write("\n")  # add spacing
+    
+    ex_names = [
         "In a shocking finding, scientists discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.",
         "The ancient people of Arcadia achieved oustanding cultural and technological developments. Below we summarise some of the highlights of the Acadian society.",
         """Tweet: "I hate it when my phone battery dies."
@@ -188,25 +188,25 @@ Q: Fetch the three max salaries from the Worker table;\n
 A:""",
     ]
 
-   inp = st.text_area(
+    inp = st.text_area(
         "Write your text here!", max_chars=2000, height=150
     )
     
-   try:
-       rec = ex_names.index(inp)
+    try:
+        rec = ex_names.index(inp)
    
-   except ValueError:
-       rec = 0
+    except ValueError:
+        rec = 0
 
-   with st.beta_expander("Generation options..."):
-       length = st.slider(
+    with st.beta_expander("Generation options..."):
+        length = st.slider(
             "Choose the length of the generated texts (in tokens)",
             2,
             1024,
             512 if rec < 2 else 50,
             10,
         )
-       temp = st.slider(
+        temp = st.slider(
             "Choose the temperature (higher - more random, lower - more repetitive). For the code generation or sentence classification promps it's recommended to use a lower value, like 0.35",
             0.0,
             1.5,
@@ -214,63 +214,63 @@ A:""",
             0.05,
         )
 
-   response = None
+    response = None
 
-   with st.form(key="inputs"):
-       submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
+    with st.form(key="inputs"):
+        submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
 
-       if submit_button:
+        if submit_button:
 
-           payload = {
+            payload = {
                 "context": inp,
                 "token_max_length": length,
                 "temperature": temp,
                 "top_p": 0.9,
             }
 
-           query = requests.post("http://localhost:5000/generate", params=payload)
-           response = query.json()
+            query = requests.post("http://localhost:5000/generate", params=payload)
+            response = query.json()
 
-           st.markdown(response["prompt"] + response["text"])
-           st.text(f"Generation done in {response['compute_time']:.3} s.")
+            st.markdown(response["prompt"] + response["text"])
+            st.text(f"Generation done in {response['compute_time']:.3} s.")
 
-   if False:
-       col1, col2, *rest = st.beta_columns([1, 1, 10, 10])
+    if False:
+        col1, col2, *rest = st.beta_columns([1, 1, 10, 10])
 
-       def on_click_good():
-           response["rate"] = "good"
-           print(response)
+        def on_click_good():
+            response["rate"] = "good"
+            print(response)
 
-       def on_click_bad():
-           response["rate"] = "bad"
-           print(response)
+        def on_click_bad():
+            response["rate"] = "bad"
+            print(response)
 
     
     
-   #st.button('Using text: Generate content NOW!')
+    #st.button('Using text: Generate content NOW!')
 
             
-   file_path = "input.wav"
+    file_path = "input.wav"
 
-# This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
+ # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-   st_audiorec(file_path)
+    st_audiorec(file_path)
 
-   upload_url = upload_to_assemblyai(file_path)
-   st.write('Prompt uploaded to AssemblyAI')
+    upload_url = upload_to_assemblyai(file_path)
+    st.write('Prompt uploaded to AssemblyAI')
 
-   transcription_id = transcribe(upload_url)
-   st.write('Prompt Sent for Transciption to AssemblyAI')
+    transcription_id = transcribe(upload_url)
+    st.write('Prompt Sent for Transciption to AssemblyAI')
 
-   prompt = get_transcription_result(transcription_id)
+    prompt = get_transcription_result(transcription_id)
 
-   st.write('Prompt Transcribed...Sending to GPT-3')
-   st.info(prompt)
+    st.write('Prompt Transcribed...Sending to GPT-3')
+    st.info(prompt)
 
-   gpt_output = call_gpt3(prompt)
+    gpt_output = call_gpt3(prompt)
 
-   st.write('Response Received from GPT-3')
-   st.success(gpt_output)
+    st.write('Response Received from GPT-3')
+    st.success(gpt_output)
     
 
 if __name__ == '__main__':
