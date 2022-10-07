@@ -233,54 +233,57 @@ A:""",
 
     #response = None
 
+    def aicontent(query):
+        response = openai.Completion.create(
+        engine="davinci-instruct-beta",
+        prompt=query,
+        temperature=temp,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0)
+    
+        if 'choices' in response:
+            if len(response['choices']) >0:
+                st.write(response['choices'][0]['text'])
+                #answer = response['choices'][0]['text']
+            else:
+                #answer = 'Ugh oh ! i accept i fail !'
+                st.write('Ugh oh ! i accept i fail !')
+        #return answer
+        
     with st.form(key="inputs"):
         submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
 
         if submit_button:
+            aicontent()
             
-            def aicontent(query):
-                response = openai.Completion.create(
-                engine="davinci-instruct-beta",
-                prompt=query,
-                temperature=temp,
-                max_tokens=256,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0)
-    
-                if 'choices' in response:
-                    if len(response['choices']) >0:
-                        st.write(response['choices'][0]['text'])
-                        #answer = response['choices'][0]['text']
-                    else:
-                         #answer = 'Ugh oh ! i accept i fail !'
-                         st.write('Ugh oh ! i accept i fail !')
-                #return answer
+            
     
     #st.button('Using text: Generate content NOW!')
 
             
-    file_path = "input.wav"
+    #file_path = "input.wav"
 
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-    st_audiorec(file_path)
+    #st_audiorec(file_path)
 
-    upload_url = upload_to_assemblyai(file_path)
-    st.write('Prompt uploaded to AssemblyAI')
+    #upload_url = upload_to_assemblyai(file_path)
+    #st.write('Prompt uploaded to AssemblyAI')
 
-    transcription_id = transcribe(upload_url)
-    st.write('Prompt Sent for Transciption to AssemblyAI')
+    #transcription_id = transcribe(upload_url)
+    #st.write('Prompt Sent for Transciption to AssemblyAI')
 
-    prompt = get_transcription_result(transcription_id)
+    #prompt = get_transcription_result(transcription_id)
 
-    st.write('Prompt Transcribed...Sending to GPT-3')
-    st.info(prompt)
+    #st.write('Prompt Transcribed...Sending to GPT-3')
+    #st.info(prompt)
 
-    gpt_output = call_gpt3(prompt)
+    #gpt_output = call_gpt3(prompt)
 
-    st.write('Response Received from GPT-3')
-    st.success(gpt_output)
+    #st.write('Response Received from GPT-3')
+    #st.success(gpt_output)
     
 
 if __name__ == '__main__':
