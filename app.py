@@ -256,7 +256,7 @@ A:""",
         submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
 
         if submit_button:
-            aicontent()
+            aicontent(inp)
             
             
     
