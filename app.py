@@ -148,15 +148,10 @@ def main():
 
     # Let's connect
 
-    
-
+ 
     [![Victor Ogunjobi](https://img.shields.io/badge/Author-@VictorOgunjobi-gray.svg?colorA=gray&colorB=dodgergreen&logo=github)](https://www.github.com/chemicopy)
 
-    
-
     [![Victor Ogunjobi](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logoColor=white)](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/)
-
-    
 
     [![Victor Ogunjobi](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=gray)](https://twitter.com/chemicopy_)
 
@@ -236,14 +231,31 @@ A:""",
             0.05,
         )
 
-    response = None
+    #response = None
 
     with st.form(key="inputs"):
         submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
 
         if submit_button:
+            
+            def aicontent(query):
+                response = openai.Completion.create(
+                engine="davinci-instruct-beta",
+                prompt=query,
+                temperature=temp,
+                max_tokens=256,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0)
+    
+                if 'choices' in response:
+                    if len(response['choices']) >0:
+                        answer = response['choices'][0]['text']
+                    else:
+                         answer = 'Ugh oh ! i accept i fail !'
+                return answer
 
-            payload = {
+            ''' payload = {
                 "context": inp,
                 "token_max_length": length,
                 "temperature": temp,
@@ -254,7 +266,7 @@ A:""",
             response = query.json()
 
             st.markdown(response["prompt"] + response["text"])
-            st.text(f"Generation done in {response['compute_time']:.3} s.")
+            st.text(f"Generation done in {response['compute_time']:.3} s.") 
 
     if False:
         col1, col2, *rest = st.beta_columns([1, 1, 10, 10])
@@ -265,7 +277,7 @@ A:""",
 
         def on_click_bad():
             response["rate"] = "bad"
-            print(response)
+            print(response) '''
 
     
     
