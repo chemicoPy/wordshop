@@ -113,7 +113,6 @@ def call_gpt3(prompt):
 
 def main():
     
-    st.subheader("Navigate to side bar to see full project info")
     st.sidebar.markdown(
             """
      ----------
@@ -156,15 +155,15 @@ def main():
     [![Victor Ogunjobi](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=gray)](https://twitter.com/chemicopy_)
 
     """)
-       
+    
     st.image('img/icon.png')  # Banner in the app
-    st.subheader("Using voice option to generate content")
+    st.subheader("Navigate to side bar to see full project info")
     st.markdown('Summary: Generate content with few words you input with text or voice-control  - powered by Artificial Intelligence (OpenAI GPT-3)! Implemented by '
         '[Victor Ogunjobi](https://www.linkedin.com/in/victor-ogunjobi-a761561a5/) - '
         'view project source code on '
         '[GitHub](https://github.com/chemicoPy/wordshop)')
     st.write('\n')  # add spacing
-            
+    st.subheader("Using voice option to generate content")   
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
     st_audiorec = components.declare_component("st_audiorec", path=build_dir)
@@ -224,7 +223,7 @@ A:""",
             10,
         )
         temp = st.slider(
-            "Choose the temperature (higher - more random, lower - more repetitive). For the code generation or sentence classification promps it's recommended to use a lower value, like 0.35",
+            "Choose the temperature (higher - more random, lower - more repetitive). For full content generation, it's recommended to use a higher value like 0.8. And for the code generation or sentence classification prompts, it's recommended to use a lower value, like 0.35",
             0.0,
             1.5,
             1.0 if rec < 2 else 0.35,
