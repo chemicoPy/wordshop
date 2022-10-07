@@ -250,10 +250,12 @@ A:""",
     
                 if 'choices' in response:
                     if len(response['choices']) >0:
-                        answer = response['choices'][0]['text']
+                        st.write(response['choices'][0]['text'])
+                        #answer = response['choices'][0]['text']
                     else:
-                         answer = 'Ugh oh ! i accept i fail !'
-                return answer
+                         #answer = 'Ugh oh ! i accept i fail !'
+                         st.write('Ugh oh ! i accept i fail !')
+                #return answer
     
     #st.button('Using text: Generate content NOW!')
 
