@@ -249,7 +249,7 @@ A:""",
             else:
                 #answer = 'Ugh oh ! i accept i fail !'
                 st.write('Ugh oh ! i accept i fail !')
-        #return answer
+ 
         
     with st.form(key="inputs"):
         submit_button = st.form_submit_button(label="Using text: Generate content NOW!")
