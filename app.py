@@ -12,7 +12,7 @@ import streamlit.components.v1 as components
 from io import BytesIO
 from time import sleep
 
-
+import math
 # Desiging & implementing changes to the standard streamlit UI/UX
 st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
