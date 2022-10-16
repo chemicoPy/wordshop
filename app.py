@@ -9,6 +9,7 @@ import os
 import openai
 import json
 import streamlit.components.v1 as components
+from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
 
@@ -170,6 +171,34 @@ def main():
 
     #st_audiorec()
     st_audiorec()
+    
+    audio_file = open(WAVE_OUTPUT_FILE, 'rb')
+    audio_bytes = audio_file.read()
+    st.audio(audio_bytes, format='audio/wav')
+    
+                
+    #file_path = "input.wav"
+
+ # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
+
+    #st_audiorec(file_path)
+
+    #upload_url = upload_to_assemblyai(file_path)
+    #st.write('Prompt uploaded to AssemblyAI')
+
+    #transcription_id = transcribe(upload_url)
+    #st.write('Prompt Sent for Transciption to AssemblyAI')
+
+    #prompt = get_transcription_result(transcription_id)
+
+    #st.write('Prompt Transcribed...Sending to GPT-3')
+    #st.info(prompt)
+
+    #gpt_output = call_gpt3(prompt)
+
+    #st.write('Response Received from GPT-3')
+    #st.success(gpt_output)
+    
 
     st.button('Using voice: Generate content NOW!')
     
@@ -259,29 +288,6 @@ A:""",
             
     
     #st.button('Using text: Generate content NOW!')
-
-            
-    #file_path = "input.wav"
-
- # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
-
-    #st_audiorec(file_path)
-
-    #upload_url = upload_to_assemblyai(file_path)
-    #st.write('Prompt uploaded to AssemblyAI')
-
-    #transcription_id = transcribe(upload_url)
-    #st.write('Prompt Sent for Transciption to AssemblyAI')
-
-    #prompt = get_transcription_result(transcription_id)
-
-    #st.write('Prompt Transcribed...Sending to GPT-3')
-    #st.info(prompt)
-
-    #gpt_output = call_gpt3(prompt)
-
-    #st.write('Response Received from GPT-3')
-    #st.success(gpt_output)
     
 
 if __name__ == '__main__':
