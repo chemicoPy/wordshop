@@ -20,12 +20,22 @@ I made "wordshop" a two- option thing. Voice/Speech & Direct Text.
 
 However, if to begin with speech, it's important to first convert speech to text and then feed the transcribed text as input to the GPT-3 model.
 
-This is how GPT-3 model works 👇👇 (download and add a couple of gif images from this link and credit the author)
+This is how GPT-3 model works 👇👇
+
+
 
 Visualization of GPT-3 generating natural language texts. (Credit: [Jay Alammar](https://jalammar.github.io/how-gpt3-works-visualizations-animations/))
 
-To generate audio transcription, I will use AssemblyAI’s speech-to-text transcription API.
+To generate audio transcription, I used AssemblyAI’s speech-to-text transcription API.
 
 The high-level workflow of the application is demonstrated in the image below:
 
 ##Prerequisites
+
+
+##App Use
+To use voice option:
+Click on "Start Recording" to start and "Stop" to stop the recording. Then, wait for the app to process your voice and return the generated content.
+Uttering a few words is enough to do the magic.
+Examples are
+following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
