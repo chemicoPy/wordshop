@@ -170,7 +170,7 @@ def main():
     st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
     #st_audiorec()
-    st_audiorec()
+    val = st_audiorec()
     
     if isinstance(val, dict):  # retrieve audio data
         with st.spinner('retrieving audio-recording...'):
