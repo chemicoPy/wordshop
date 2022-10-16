@@ -117,8 +117,7 @@ def main():
             """
      ----------
     ## Project Overview
-    This is a Job recommendation web app that uses filtering techniques and Natural Language Processing (NLP)
-    to suggest 10 top jobs to user upon entering a specific job/role (and probably other preferences).
+    wordshop is powered by OpenAI’s GPT-3. You can generate content with few words you input in either voice/speech or text!.
     """)
 
     st.sidebar.header("")  # initialize empty space
@@ -136,8 +135,15 @@ def main():
             
 """
     ----------
-    ## NOTE:
-    If the Job/your preferences could not be matched with the available jobs, the overview of job data will be returned with their scores all labeled as "0.0" 
+    ## App Use:
+    
+    To use voice option: 
+    Click on "Start Recording" to start and "Stop" to stop the recording. Then, wait for the app to process your voice and return the generated content. 
+    Uttering a few words is enough to do the magic. 
+    Examples are following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
+    
+    To use Direct text option:
+    
     """)
     st.sidebar.markdown(
 
