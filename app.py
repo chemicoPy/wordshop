@@ -131,8 +131,7 @@ def main():
     To use voice option 
     1. Click on "Start Recording" to start and "Stop" to stop the recording. 
     2. Then, wait for the app to process your voice and return the generated content. 
-    Uttering a few words is enough to do the magic. 
-    Examples are following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
+    Uttering a few words is enough to do the magic. Examples are following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
     -----------
     To use Direct text option
     
