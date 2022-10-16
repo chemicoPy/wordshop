@@ -147,6 +147,9 @@ def main():
     To use Direct text option:
     
     """)
+    """
+    -----------
+    """
     
     # preview app demo
     demo = st.sidebar.checkbox('App Demo')
