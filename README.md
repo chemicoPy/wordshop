@@ -10,7 +10,7 @@ wordshop is powered by OpenAI’s GPT-3. You can generate content with few words
 # App Demo (this is a subheading) - drag and drop my demo video here
 
 ## Description
-GPT-3; a Large Language Model (LLM for short) is available to the public, with accessibility using OpenAI’s APIs. As a result, since its release, OpenAI’s GPT-3 has been leveraged in over 300 applications/products. (source: [here](https://openai.com/blog/gpt-3-apps/).
+GPT-3; a Large Language Model (LLM for short) is available to the public, with accessibility using OpenAI’s APIs. As a result, since its release, OpenAI’s GPT-3 has been leveraged in over 300 applications/products. (source: [here](https://openai.com/blog/gpt-3-apps/)).
 
 GPT-3 takes a text input as a prompt and performs the task of text completion by predicting one token at a time. What makes GPT-3 special is the scale at which it was built, possessing nearly 175B parameters.
 
