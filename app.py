@@ -171,6 +171,20 @@ def main():
 
     #st_audiorec()
     st_audiorec()
+    
+    if isinstance(val, dict):  # retrieve audio data
+        with st.spinner('retrieving audio-recording...'):
+            ind, val = zip(*val['arr'].items())
+            ind = np.array(ind, dtype=int)  # convert to np array
+            val = np.array(val)             # convert to np array
+            sorted_ints = val[ind]
+            stream = BytesIO(
+                b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
+            wav_bytes = stream.read()
+
+        # wav_bytes contains audio data in format to be further processed
+        # display audio data as received on the Python side
+        st.audio(wav_bytes, format='audio/wav')
  
                 
     #file_path = "input.wav"
