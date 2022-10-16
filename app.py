@@ -135,16 +135,24 @@ def main():
             
 """
     ----------
-    ## App Use:
+    ## How to use app:
     
     To use voice option: 
-    Click on "Start Recording" to start and "Stop" to stop the recording. Then, wait for the app to process your voice and return the generated content. 
+    1. Click on "Start Recording" to start and "Stop" to stop the recording. 
+    2. Then, wait for the app to process your voice and return the generated content. 
     Uttering a few words is enough to do the magic. 
     Examples are following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
     
+    -----------
     To use Direct text option:
     
     """)
+    
+    # preview app demo
+    demo = st.sidebar.checkbox('App Demo')
+    if demo == 1:
+       st.sidebar.video('https://res.cloudinary.com/victorogunjobi/video/upload/v1657021658/Text-Speech-Analytic%20app/app_demo_rq2dpx.mp4', format='mp4')
+    
     st.sidebar.markdown(
 
     """
