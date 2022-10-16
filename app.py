@@ -247,8 +247,7 @@ A:""",
                 st.write(response['choices'][0]['text'])
                 #answer = response['choices'][0]['text']
             else:
-                #answer = 'Ugh oh ! i accept i fail !'
-                st.write('Ugh oh ! i accept i fail !')
+                st.write('Oh, sorry ! i admit i failed this !')
  
         
     with st.form(key="inputs"):
