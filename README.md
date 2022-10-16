@@ -21,7 +21,9 @@ I made "wordshop" a two- option thing. Voice/Speech & Direct Text.
 However, if to begin with speech, it's important to first convert speech to text and then feed the transcribed text as input to the GPT-3 model.
 
 This is how GPT-3 model works 👇👇
+![First screenshot](assets/img1.gif)
 
+![Second screenshot](assets/img2.gif)
 
 
 Visualization of GPT-3 generating natural language texts. (Credit: [Jay Alammar](https://jalammar.github.io/how-gpt3-works-visualizations-animations/))
