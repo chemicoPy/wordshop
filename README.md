@@ -30,10 +30,10 @@ To generate audio transcription, I used AssemblyAI’s speech-to-text transcript
 
 The high-level workflow of the application is demonstrated in the image below:
 
-#Prerequisites
+# Prerequisites
 
 
-#App Use
+# App Use
 To use voice option:
 Click on "Start Recording" to start and "Stop" to stop the recording. Then, wait for the app to process your voice and return the generated content.
 Uttering a few words is enough to do the magic.
