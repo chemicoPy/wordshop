@@ -117,7 +117,7 @@ def main():
             """
      ----------
     ## Project Overview
-    wordshop is powered by OpenAI’s GPT-3. You can generate content with few words you input in either voice/speech or text!.
+    wordshop is a project powered by OpenAI’s GPT-3. You can generate content with few words you input in either voice/speech or text!.
     """)
 
     st.sidebar.header("")  # initialize empty space
@@ -128,14 +128,13 @@ def main():
     ----------
     ## How to use app:
     
-    To use voice option: 
+    To use voice option 
     1. Click on "Start Recording" to start and "Stop" to stop the recording. 
     2. Then, wait for the app to process your voice and return the generated content. 
     Uttering a few words is enough to do the magic. 
     Examples are following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
-    
     -----------
-    To use Direct text option:
+    To use Direct text option
     
     """)
     """
