@@ -171,11 +171,7 @@ def main():
 
     #st_audiorec()
     st_audiorec()
-    
-    audio_file = open(WAVE_OUTPUT_FILE, 'rb')
-    audio_bytes = audio_file.read()
-    st.audio(audio_bytes, format='audio/wav')
-    
+ 
                 
     #file_path = "input.wav"
 
