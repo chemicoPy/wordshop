@@ -13,6 +13,7 @@ from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
 import whisper
+from pydub import AudioSegment
 
 import math
 # Desiging & implementing changes to the standard streamlit UI/UX
@@ -185,7 +186,7 @@ def main():
 
         # wav_bytes contains audio data in format to be further processed
         # display audio data as received on the Python side
-        wav_audio = audio(wav_bytes, format='audio/wav')
+            audio = AudioSegment.from_raw(wav_bytes, sample_width, frame_rate, channels).export(filename, format='wav')
         
     #model = whisper.load_model("base")
     #result = model.transcribe("audio.mp3")
