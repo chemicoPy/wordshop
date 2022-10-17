@@ -49,7 +49,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 headers = {
