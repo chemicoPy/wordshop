@@ -186,7 +186,7 @@ def main():
         # wav_bytes contains audio data in format to be further processed
         # display audio data as received on the Python side
         #wav_audio = st.audio(wav_bytes, format='audio/wav')
-        st.write(wav_bytes)
+            st.write(wav_bytes)
         
     #model = whisper.load_model("base")
     #result = model.transcribe("audio.mp3")
