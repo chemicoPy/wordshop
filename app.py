@@ -49,7 +49,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 headers = {
@@ -130,7 +130,8 @@ def main():
     To use voice option 
     1. Click on "Start Recording" to start and "Stop" to stop the recording. 
     2. Then, wait for the app to process your voice and return the generated content. 
-    Uttering a few words is enough to do the magic. Examples are following prompt to GPT-3: " Can you generate for me a content on ... " , "A short story on ... ", “Think about the existence of Life outside Earth.”
+    3. Uttering a few words is enough to do the magic. 
+    4. Examples are following prompt to GPT-3: 1. Can you generate for me a content on ... , 2. A short story on ... , 3. Think about the existence of Life outside Earth.
     -----------
     To use Direct text option
     ----------
