@@ -195,7 +195,7 @@ def main():
 
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-    st_audiorec(file_path)
+    val(file_path)
 
     #upload_url = upload_to_assemblyai(file_path)
     #st.write('Prompt uploaded to AssemblyAI')
