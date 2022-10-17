@@ -6,10 +6,8 @@ numpy==1.19.4
 openai
 pandas==1.4.3; python_version >= '3.8'
 pyarrow
-pydub
 spacy-streamlit==1.0.0
 spacy>=2.2.0
 streamlit==0.82.0
 scikit-learn==1.0.2
 transformers~=4.4.2
-whisper
