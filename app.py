@@ -12,6 +12,7 @@ import streamlit.components.v1 as components
 from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
+import whisper
 
 import math
 # Desiging & implementing changes to the standard streamlit UI/UX
@@ -184,8 +185,11 @@ def main():
 
         # wav_bytes contains audio data in format to be further processed
         # display audio data as received on the Python side
-        #st.audio(wav_bytes, format='audio/wav')
- 
+    wav_audio = st.audio(wav_bytes, format='audio/wav')
+        
+    #model = whisper.load_model("base")
+    #result = model.transcribe("audio.mp3")
+    #st.write(result["text"])
                 
     #file_path = "input.wav"
 
