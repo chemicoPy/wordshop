@@ -13,7 +13,6 @@ from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
 import whisper
-from pydub import AudioSegment
 
 import math
 # Desiging & implementing changes to the standard streamlit UI/UX
@@ -186,13 +185,13 @@ def main():
 
         # wav_bytes contains audio data in format to be further processed
         # display audio data as received on the Python side
-            audio = AudioSegment.from_raw(wav_bytes, sample_width, frame_rate, channels).export(filename, format='wav')
+        #st.audio(wav_bytes, format='audio/wav')
         
     #model = whisper.load_model("base")
     #result = model.transcribe("audio.mp3")
     #st.write(result["text"])
                 
-    #file_path = "input.wav"
+    file_path = "input.wav"
 
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
@@ -202,7 +201,7 @@ def main():
     #st.write('Prompt uploaded to AssemblyAI')
 
     #transcription_id = transcribe(upload_url)
-    #st.write('Prompt Sent for Transciption to AssemblyAI')
+    #st.write('Prompt Sent for Transcription to AssemblyAI')
 
     #prompt = get_transcription_result(transcription_id)
 
