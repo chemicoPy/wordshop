@@ -191,11 +191,11 @@ def main():
     #result = model.transcribe("audio.mp3")
     #st.write(result["text"])
                 
-    file_path = "input.wav"
+    #file_path = "input.wav"
 
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
-    val(file_path)
+    #st_audiorec(file_path)
 
     #upload_url = upload_to_assemblyai(file_path)
     #st.write('Prompt uploaded to AssemblyAI')
