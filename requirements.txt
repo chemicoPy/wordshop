@@ -11,4 +11,4 @@ spacy>=2.2.0
 streamlit==0.82.0
 scikit-learn==1.0.2
 transformers~=4.4.2
-!pip install git+https://github.com/openai/whisper.git
+whisper
