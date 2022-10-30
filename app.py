@@ -51,7 +51,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 """Reading the keys: """
 
 cfg = configparser.ConfigParser()
-cfg.read("./assets/api_keys.ini")
+cfg.read("./.idea/api_keys.ini")
    
 assembly_auth_key = cfg["keys"]["assembly_auth_key"]
 openai.api_key = cfg["keys"]["openai.api_key"]
