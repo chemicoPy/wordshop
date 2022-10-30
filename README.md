@@ -7,7 +7,7 @@ wordshop is powered by OpenAI’s GPT-3. You can generate content with few words
 
 ## [Use App](https://chemicopy-wordshop-app-gti2n8.streamlitapp.com/)
 
-# App Demo (this is a subheading) - drag and drop my demo video here
+# App Demo
 
 ## Description
 GPT-3; a Large Language Model (LLM for short) is available to the public, with accessibility using OpenAI’s APIs. As a result, since its release, OpenAI’s GPT-3 has been leveraged in over 300 applications/products. (source: [here](https://openai.com/blog/gpt-3-apps/)).
