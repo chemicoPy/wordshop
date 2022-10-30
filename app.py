@@ -49,7 +49,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 
 """Reading the keys: """
-with open("api_keys.json", "r") as jsonfile:
+with open("./assets/api_keys.json", "r") as jsonfile:
     keys = json.load(jsonfile)
    
 assembly_auth_key =str(keys["assembly_auth_key"])
