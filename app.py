@@ -48,8 +48,6 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 
-"""Reading the keys: """
-
 cfg = configparser.ConfigParser()
 cfg.read("./.idea/api_keys.ini")
    
