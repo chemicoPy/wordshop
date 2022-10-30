@@ -13,7 +13,7 @@ from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
 import whisper
-import json
+import configparser
 import math
 
 # Desiging & implementing changes to the standard streamlit UI/UX
@@ -49,12 +49,12 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 
 """Reading the keys: """
-with open("./assets/api_keys.json", "r") as jsonfile:
-    keys = json.load(jsonfile)
-   
-assembly_auth_key =str(keys["assembly_auth_key"])
 
-openai.api_key = str(keys["openai.api_key"])
+cfg = configparser.ConfigParser()
+cfg.read("./assets/api_keys.ini")
+   
+assembly_auth_key = cfg["keys"]["assembly_auth_key"]
+openai.api_key = cfg["keys"]["openai.api_key"]
 
 headers = {
     'authorization': assembly_auth_key, 
