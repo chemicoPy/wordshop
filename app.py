@@ -13,8 +13,9 @@ from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
 import whisper
-
+import json
 import math
+
 # Desiging & implementing changes to the standard streamlit UI/UX
 st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
@@ -47,10 +48,13 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 
-assembly_auth_key = "c30c21034f994fdca6a21ee77b49a25a"
+"""Reading the keys: """
+with open("api_keys.json", "r") as jsonfile:
+    keys = json.load(jsonfile)
+   
+assembly_auth_key =str(keys["assembly_auth_key"])
 
-openai.api_key = "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"
-
+openai.api_key = str(keys["openai.api_key"])
 
 headers = {
     'authorization': assembly_auth_key, 
