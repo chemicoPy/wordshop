@@ -174,7 +174,7 @@ def main():
     build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
     st_audiorec = components.declare_component("st_audiorec", path=build_dir)
     
-    st.write(parent_dir) #./app/wordshop/input.wav
+    #st.write(parent_dir) #./app/wordshop/input.wav
    
     #st_audiorec()
     val = st_audiorec()
@@ -199,8 +199,13 @@ def main():
                 
     #file_path = "./wordshop/app/$0"
 
-    HERE = Path(__file__).parent
-    st.write(HERE)
+    webrtc_ctx = webrtc_streamer(
+        key="speech-to-text-w-video",
+        mode=WebRtcMode.SENDRECV,
+        queued_audio_frames_callback=queued_audio_frames_callback,
+        rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+        media_stream_constraints={"video": True, "audio": True},
+    )
     
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
