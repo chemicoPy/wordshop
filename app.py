@@ -195,7 +195,7 @@ def main():
     #result = model.transcribe("audio.mp3")
     #st.write(result["text"])
                 
-    file_path = "./app/wordshop/input.wav"
+    file_path = "./app/wordshop"
 
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
