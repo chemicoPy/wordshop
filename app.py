@@ -16,6 +16,7 @@ import whisper
 import configparser
 import math
 from pathlib import Path
+from streamlit_webrtc import webrtc_streamer
 
 # Desiging & implementing changes to the standard streamlit UI/UX
 st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
