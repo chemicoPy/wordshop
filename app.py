@@ -174,6 +174,7 @@ def main():
     st_audiorec = components.declare_component("st_audiorec", path=build_dir)
     
     st.write(parent_dir) #./app/wordshop/input.wav
+   
     #st_audiorec()
     val = st_audiorec()
     
@@ -194,6 +195,9 @@ def main():
     #model = whisper.load_model("base")
     #result = model.transcribe("audio.mp3")
     #st.write(result["text"])
+    
+    if wav_bytes is not None:
+        st.write(wave_byte.name)
                 
     file_path = "/app/wordshop"
 
