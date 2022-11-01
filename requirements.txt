@@ -9,5 +9,6 @@ pyarrow
 spacy-streamlit==1.0.0
 spacy>=2.2.0
 streamlit==0.82.0
+streamlit-webrtc==0.35.1
 scikit-learn==1.0.2
 transformers~=4.4.2
