@@ -16,7 +16,6 @@ import whisper
 import configparser
 import math
 from pathlib import Path
-from streamlit_webrtc import WebRtcMode, webrtc_streamer
 
 # Desiging & implementing changes to the standard streamlit UI/UX
 st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
@@ -199,33 +198,7 @@ def main():
     #st.write(result["text"])
                 
     #file_path = "./wordshop/app/$0"
-    
-    async def queued_audio_frames_callback(
-        frames: List[av.AudioFrame],
-    ) -> av.AudioFrame:
-        with frames_deque_lock:
-            frames_deque.extend(frames)
-
-        # Return empty frames to be silent.
-        new_frames = []
-        for frame in frames:
-            input_array = frame.to_ndarray()
-            new_frame = av.AudioFrame.from_ndarray(
-                np.zeros(input_array.shape, dtype=input_array.dtype),
-                layout=frame.layout.name,
-            )
-            new_frame.sample_rate = frame.sample_rate
-            new_frames.append(new_frame)
-
-        return new_frames
-
-    webrtc_ctx = webrtc_streamer(
-        key="speech-to-text-w-video",
-        mode=WebRtcMode.SENDRECV,
-        queued_audio_frames_callback=queued_audio_frames_callback,
-        rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
-        media_stream_constraints={"video": True, "audio": True},
-    )
+   
     
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
