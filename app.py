@@ -199,8 +199,8 @@ def main():
                 
     #file_path = "./wordshop/app/$0"
 
-    here = Path(__path__).parent
-    st.write(here)
+    HERE = Path(__file__).parent
+    st.write(HERE)
     
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
