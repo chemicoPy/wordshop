@@ -199,6 +199,25 @@ def main():
     #st.write(result["text"])
                 
     #file_path = "./wordshop/app/$0"
+    
+    async def queued_audio_frames_callback(
+        frames: List[av.AudioFrame],
+    ) -> av.AudioFrame:
+        with frames_deque_lock:
+            frames_deque.extend(frames)
+
+        # Return empty frames to be silent.
+        new_frames = []
+        for frame in frames:
+            input_array = frame.to_ndarray()
+            new_frame = av.AudioFrame.from_ndarray(
+                np.zeros(input_array.shape, dtype=input_array.dtype),
+                layout=frame.layout.name,
+            )
+            new_frame.sample_rate = frame.sample_rate
+            new_frames.append(new_frame)
+
+        return new_frames
 
     webrtc_ctx = webrtc_streamer(
         key="speech-to-text-w-video",
