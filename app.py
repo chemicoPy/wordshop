@@ -199,7 +199,7 @@ def main():
     if wav_bytes is not None:
         st.write(wav_bytes.name)
                 
-    file_path = "/app/wordshop"
+    file_path = "./app/wordshop/audio.wav"
 
  # This is where i stopped; next thing to do is to know the path whatever is being recorded is saved and integrate it below:
 
