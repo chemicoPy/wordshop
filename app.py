@@ -197,7 +197,7 @@ def main():
     #st.write(result["text"])
     
     if wav_bytes is not None:
-        st.write(wave_byte.name)
+        st.write(wav_bytes.name)
                 
     file_path = "/app/wordshop"
 
