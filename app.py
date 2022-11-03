@@ -53,7 +53,7 @@ cfg = configparser.ConfigParser()
 cfg.read("./.idea/api_keys.ini")
    
 assembly_auth_key = cfg["keys"]["assembly_auth_key"]
-openai.api_key = "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"
+openai.api_key = st.secrets["openai_apikey"]
 
 headers = {
     'authorization': assembly_auth_key, 
