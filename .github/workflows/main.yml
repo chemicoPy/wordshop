@@ -1,6 +1,6 @@
 - name: Run tests
 env:
-    openai.api_key: ${{ secrets.OPENAI_APIKEY}}
+    openai.api_key: ${{ secrets.OPENAI_APIKEY }}
     
 run: |
   nbdev_test_nbs
