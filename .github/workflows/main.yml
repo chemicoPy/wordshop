@@ -1,6 +1,5 @@
-- name: Run tests
-env:
-    openai.api_key: ${{ secrets.OPENAI_APIKEY }}
-    
-run: |
-  nbdev_test_nbs
+- name: Test env vars for python
+  run: python -c 'import os;print(os.environ)'
+  env:
+    ENV_SECRET: ${{ secrets.OPENAI_APIKEY }} 
+    REPO_SECRET: ${{ secrets.OPENAI_APIKEY }} 
