@@ -47,7 +47,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
    
 assembly_auth_key = st.secrets["assembly_apikey"]
-openai.api_key = st.secrets["openai_apikey"]
+openai.api_key = os.getenv("OPENAI_APIKEY")
 
 headers = {
     'authorization': assembly_auth_key, 
