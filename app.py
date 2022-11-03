@@ -12,7 +12,6 @@ import streamlit.components.v1 as components
 from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
-import configparser
 import math
 from pathlib import Path
 
@@ -46,12 +45,8 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 # disable warnings
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
-
-
-cfg = configparser.ConfigParser()
-cfg.read("./.idea/api_keys.ini")
    
-assembly_auth_key = cfg["keys"]["assembly_auth_key"]
+assembly_auth_key = st.secrets["assembly_apikey"]
 openai.api_key = st.secrets["openai_apikey"]
 
 headers = {
