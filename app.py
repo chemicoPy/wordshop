@@ -12,7 +12,6 @@ import streamlit.components.v1 as components
 from settings import WAVE_OUTPUT_FILE
 from io import BytesIO
 from time import sleep
-import whisper
 import configparser
 import math
 from pathlib import Path
