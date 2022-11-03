@@ -1,0 +1,6 @@
+- name: Run tests
+env:
+    OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY}}
+    
+run: |
+  nbdev_test_nbs
