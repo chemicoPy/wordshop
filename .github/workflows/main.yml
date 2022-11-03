@@ -1,2 +1,6 @@
 - name: Test env vars for python
-  run: openai.api_key=${{ secrets.OPENAI_APIKEY }} python -c 'import os;print(os.environ)['openai.api_key']'
+  with:
+    openai.api_key = ${{ secrets.OPENAI_APIKEY }}
+  env:
+    openai.api_key = ${{ secrets.OPENAI_APIKEY }}
+  
