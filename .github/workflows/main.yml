@@ -1,6 +1,9 @@
-- name: Test env vars for python
-  with:
-    openai.api_key = ${{ secrets.OPENAI_APIKEY }}
-  env:
-    openai.api_key = ${{ secrets.OPENAI_APIKEY }}
-  
+steps:
+  - name: app
+  on: push
+    with:
+      openai.api_key: ${{ secrets.OPENAI_APIKEY }}
+    env:
+      openai.api_key: ${{ secrets.OPENAI_APIKEY }}
+    
+      
