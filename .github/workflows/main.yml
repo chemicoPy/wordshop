@@ -1,9 +1,6 @@
-steps:
-  - name: app
-  on: push
-    with:
-      openai.api_key: ${{ secrets.OPENAI_APIKEY }}
-    env:
-      openai.api_key: ${{ secrets.OPENAI_APIKEY }}
+name: wordshop app
+on: [pull_request, push]
+env:
+  openai.api_key: ${{ secrets.OPENAI_APIKEY }}
     
       
