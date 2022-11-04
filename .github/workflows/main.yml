@@ -1,6 +1,6 @@
 name: wordshop app workflow
 
-on: [pull_request, push]
+on: [push, pull_request]
 
 jobs:
   build:
