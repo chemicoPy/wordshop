@@ -17,5 +17,5 @@ jobs:
 
       - name: execute py script # app.py
         env: 
-          openai.api_key: ${{ secrets.OPENAI_APIKEY }}
+          OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
         run: python app.py
