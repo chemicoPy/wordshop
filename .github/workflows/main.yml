@@ -2,5 +2,7 @@ name: wordshop app
 on: [pull_request, push]
 env:
   openai.api_key: ${{ secrets.OPENAI_APIKEY }}
+  
+  run: python app.py
     
       
