@@ -1,7 +1,8 @@
 name: wordshop app workflow
 
-on: [push, pull_request]
-
+on:
+  schedule:
+    - cron: '*/ * * * *' # runs every 15 min
 jobs:
   build:
     runs-on: [self-hosted, linux, windows-latest, ubuntu-latest]
