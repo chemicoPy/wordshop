@@ -1,7 +1,6 @@
 name: wordshop app workflow
 
-on:
-  workflow_dispatch
+on: [push, fork, pull_request]
 
 jobs:
   build:
