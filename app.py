@@ -48,7 +48,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
    
 assembly_auth_key = st.secrets["assembly_apikey"]
-openai.api_key = os.environ.get("OPENAI_APIKEY")
+openai.api_key = os.environ["OPENAI_APIKEY"]
 
 
 headers = {
