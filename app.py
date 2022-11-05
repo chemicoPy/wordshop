@@ -46,13 +46,13 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-   
-assembly_auth_key = st.secrets["assembly_apikey"]
-openaikey = os.getenv("OPENAI_APIKEY")
-openai.api_key = openaikey
+import os 
 
-assembly_auth_key_key = os.getenv("assembly_auth_key")
-st.write(openaikey)
+assembly_auth_key = st.secrets["assembly_apikey"]
+OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
+openai.api_key = OPENAI_APIKEY
+
+st.write(OPENAI_APIKEY)
 
 headers = {
     'authorization': assembly_auth_key, 
