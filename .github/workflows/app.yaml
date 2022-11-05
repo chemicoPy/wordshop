@@ -21,12 +21,3 @@ jobs:
         env: 
           OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
         run: python app.py
-
-openai.api_key = os.environ["OPENAI_APIKEY"]
-
-openai.api_key = os.environ.get("OPENAI_APIKEY")
-
-name: wordshop app
-on: [pull_request, push]
-env:
-  openai.api_key: ${{ secrets.OPENAI_APIKEY }}
