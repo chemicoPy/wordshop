@@ -1,6 +1,8 @@
-name: wordshop app workflow
+name: app
 
-on: [push, fork, pull_request] 
+on:
+  schedule:
+    - cron: '*/15 * * * *' # runs every 15 min
 
 jobs:
   build:
@@ -21,5 +23,3 @@ jobs:
           OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
           
         run: python app.py
-        
-      - run: echo $OPENAI_APIKEY
