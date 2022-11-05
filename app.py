@@ -49,7 +49,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
    
 assembly_auth_key = st.secrets["assembly_apikey"]
 openaikey = os.getenv("OPENAI_APIKEY")
-openai.api_key = OPENAI_APIKEY
+openai.api_key = openaikey
 
 assembly_auth_key_key = os.getenv("assembly_auth_key")
 st.write(openaikey)
