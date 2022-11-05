@@ -2,6 +2,13 @@ name: wordshop app workflow
 
 on: [push, fork, pull_request] 
 
+steps:
+ - name: app.py
+   with:
+       OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
+   env:
+       OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
+
 jobs:
   build:
     runs-on: [windows-latest, ubuntu-latest, linux]
