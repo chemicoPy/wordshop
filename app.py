@@ -48,10 +48,11 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
    
 assembly_auth_key = st.secrets["assembly_apikey"]
-OPENAI_APIKEY = os.environ.get("OPENAI_APIKEY")
+OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
 openai.api_key = OPENAI_APIKEY
 st.write(OPENAI_APIKEY)
-printenv OPENAI_APIKEY
+
+
 headers = {
     'authorization': assembly_auth_key, 
     'content-type': 'application/json',
