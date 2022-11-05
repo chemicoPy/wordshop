@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: [windows-latest, ubuntu-latest, linux]
     steps:
+      
 
       - name: checkout repo content
         uses: actions/checkout@v2
@@ -18,4 +19,7 @@ jobs:
       - name: execute py script # app.py
         env: 
           OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
+          
         run: python app.py
+        
+      - run: echo $OPENAI_APIKEY
