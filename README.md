@@ -5,7 +5,7 @@
 # Project Overview
 wordshop is powered by OpenAI’s GPT-3. You can generate content with few words you input in either voice/speech or text!
 
-## [Use App](https://chemicopy-wordshop-app-gti2n8.streamlitapp.com/)
+## [Use App](https://wordshop.streamlit.app/)
 
 # App Demo
 
