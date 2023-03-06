@@ -26,7 +26,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 import os 
 
 assembly_auth_key = st.secrets["assembly_apikey"]
-OPENAI_APIKEY = st.secrets["api_key2"]
+openai.api_key = "sk-"+(re.sub(r"[^\w]", "", st.secrets["api_key2"]))
 
 headers = {
     'authorization': assembly_auth_key, 
