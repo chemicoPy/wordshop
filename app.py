@@ -16,9 +16,8 @@ import math
 from pathlib import Path
 
 # Desiging & implementing changes to the standard streamlit UI/UX
-#st.set_page_config(page_icon="img/icon_2.jpg")    #Logo
 
-st.set_page_config(page_title='Market Monitor', page_icon="img/icon_2.jpg", layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(page_title='wordshop', page_icon="img/icon_2.jpg", layout='wide', initial_sidebar_state='expanded')
 
 # disable warnings
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -29,7 +28,6 @@ import os
 assembly_auth_key = st.secrets["assembly_apikey"]
 OPENAI_APIKEY = os.getenv("OPENAI_APIKEY")
 openai.api_key = OPENAI_APIKEY
-
 
 headers = {
     'authorization': assembly_auth_key, 
